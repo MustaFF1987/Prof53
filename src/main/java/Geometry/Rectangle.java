@@ -1,55 +1,35 @@
 package Geometry;
 
 public class Rectangle {
-    // добавьте свойства se и nw - юго-восточная точка и северо-западная
-    double Point_se1;
-    double Point_se2;
-    double Point_nw1;
-    double Point_nw2;
 
-    // добавьте конструктор
+    private Point se;
+    private Point nw;
 
-    public Rectangle(int point_se1, int point_se2, int point_nw1, int point_nw2) {
-        Point_se1 = point_se1;
-        Point_se2 = point_se2;
-        Point_nw1 = point_nw1;
-        Point_nw2 = point_nw2;
+    public Rectangle(Point se, Point nw) {
+        this.se = se;
+        this.nw = nw;
     }
 
-    public double getPoint_se1() {
-        return Point_se1;
+    public Point getSe() {
+        return se;
     }
 
-    public void setPoint_se1(double point_se1) {
-        Point_se1 = point_se1;
+    public void setSe(Point se) {
+        this.se = se;
     }
 
-    public double getPoint_se2() {
-        return Point_se2;
+    public Point getNw() {
+        return nw;
     }
 
-    public void setPoint_se2(double point_se2) {
-        Point_se2 = point_se2;
+    public void setNw(Point nw) {
+        this.nw = nw;
     }
 
-    public double getPoint_nw1() {
-        return Point_nw1;
-    }
+    double area(){
 
-    public void setPoint_nw1(double point_nw1) {
-        Point_nw1 = point_nw1;
-    }
-
-    public double getPoint_nw2() {
-        return Point_nw2;
-    }
-
-    public void setPoint_nw2(double point_nw2) {
-        Point_nw2 = point_nw2;
-    }
-
-    public double area(){
-        return  (Point_se2 - Point_se1) * (Point_nw1 - Point_nw2);
+        double sizeX = se.getX() - nw.getY();
+        double sizeY = se.getY() - nw.getX();
+        return sizeY * sizeX;
     }
 }
-

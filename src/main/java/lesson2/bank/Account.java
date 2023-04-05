@@ -70,4 +70,19 @@ public class Account {
 }
 
 
+//    // перевод денег со счета на счет
+//    // кредитуем свой счет и дебитуем account
+//    // возвращается баланс счета
+//    // при попытке снять больше чем есть на счете нужно печатать сообщение
+//    public int transfer(Account account, int amount)
+//    {
+//        // кредитуем наш счет (снимаем с него amount денег)
+//        // дебитуем счет account на количество реально снятых денег
+//
+//        // сколько было - сколько стало
+//        int amountDebited = (balance - credit(amount));
+//        account.debit(amountDebited);
+//
+//        return balance;
+//    }
 

@@ -39,6 +39,12 @@ public class Triangle extends Figure {
     @Override
     double area() {return 0.5*(sideA * sideB * Math.sin(sideC));}
 
+//    double area() {
+//        double p = perimeter()/2.0;
+//        return Math.sqrt(p*(p-x)*(p-y)*(p-z));
+//    }
+
+
     @Override
     double perimeter() {return sideA + sideB + sideC;}
 

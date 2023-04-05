@@ -3,7 +3,7 @@ package lesson2.shape;
 public class FigureTester {
     public static void main(String[] args) {
 
-        Figure [] figures = new Figure[1000];
+        Figure [] figures = new Figure[10];
         figures[0] = new Circle(15);
         figures[1] = new Circle(20);
         figures[2] = new Rectanlge(10,15);
@@ -39,6 +39,29 @@ public class FigureTester {
         }
         System.out.println("Сумма площади всех фигур: " + (int)sumArea);
         System.out.println("---------------------------------------");
+
+//        public static double perimeter(Figure [] figures)
+//        {
+//            double result = 0;
+//            for(int i = 0; i < figures.length; i++)
+//            {
+//                if(figures[i] != null)
+//                    result += figures[i].area();
+//            }
+//            return result;
+//        }
+
+//        public static double perimeter(Figure [] figures)
+//        {
+//            double result = 0;
+//            for(int i = 0; i < figures.length; i++)
+//            {
+//                if(figures[i] != null)
+//                    result += figures[i].perimeter();
+//            }
+//            return result;
+//        }
+
 
         double sumPerimeter = 0;
         for(int i = 0; i < figures.length; i++)
