@@ -71,7 +71,7 @@ public class Pizza {
                 price += 14;
                 break;
         }
-        // за каждый дополнительный топпинг по 2
+        // за каждый дополнительный топинг по 2
         price += (ham + cheese + peperoni + pineapple) * 2;
         return price;
     }
