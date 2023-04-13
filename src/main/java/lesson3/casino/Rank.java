@@ -5,6 +5,7 @@ public enum Rank {
     SEVEN(7), EIGHT(8), NINE(9), TEN(10),
     JACK(2), QUEEN(3), KING(4), ACE(11)
     ;
+    private int value;
 
     Rank(int value) {
         this.value = value;
@@ -14,6 +15,6 @@ public enum Rank {
         return value;
     }
 
-    private int value;
+
 
 }
