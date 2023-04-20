@@ -42,6 +42,18 @@ public class MyDate {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
+    // альтернативный код isLeapYear
+
+//    private boolean isLeapYear(int year)
+//    {
+//        if(year % 400 == 0)
+//            return true;
+//        if(year % 100 == 0)
+//            return false;
+//        return year % 4 == 0;
+//    }
+
+
     // метод для получения количества дней в месяце
     private int getDaysInMonth(int month, int year) {
         switch (month) {
@@ -57,6 +69,30 @@ public class MyDate {
         }
     }
 
+    // альтернативный метод для получения количества дней в месяце
+
+//    private int daysInMonth(int month, int year)
+//    {
+//        switch (month)
+//        {
+//            case 2:
+//            {
+//                if(isLeapYear(year))
+//                    return 29;
+//                else return 28;
+//            }
+//            case 1:
+//            case 3:
+//            case 5:
+//            case 7:
+//            case 8:
+//            case 10:
+//            case 12:
+//                return 31;
+//            default:
+//                return 30;
+//        }
+//    }
 
     // добавить дни к дате
 
@@ -69,16 +105,13 @@ public class MyDate {
 
                 // вычитаем из оставшихся дней количество дней в текущем месяце
                 days -= (daysInMonth - day + 1);
-
                 // переходим к следующему месяцу
                 month++;
-
                 // если месяц выходит за границы года, переходим к следующему году
                 if (month > 12) {
                     year++;
                     month = 1;
                 }
-
                 // переходим на первый день следующего месяца
                 day = 1;
             } else {
@@ -88,6 +121,44 @@ public class MyDate {
                 break;
             }
         }
+
+
     }
+
+    // альтернативный код
+
+//    public void add(int days)
+//    {
+//        int daysLeft = days;
+//        int currentDay = day;
+//        int currentMonth = month;
+//        int currentYear = year;
+//        while (daysLeft > 0)
+//        {
+//            // определим сколько дней осталось до конца текущего месяца
+//            int daysLeftInCurrentMonth = daysInMonth(currentMonth, currentYear) - currentDay;
+//            // если оставшееся количество дней в месяце больше чем daysLeft
+//            if(daysLeftInCurrentMonth >= daysLeft)
+//            {
+//                currentDay += daysLeft;
+//                daysLeft = 0;
+//            }
+//            else {
+//                daysLeft -= (daysLeftInCurrentMonth + 1);
+//                currentDay = 1;
+//                if(currentMonth == 12)
+//                {
+//                    currentMonth = 1;
+//                    currentYear++;
+//                }
+//                else {
+//                    currentMonth++;
+//                }
+//            }
+//        }
+//        year = currentYear;
+//        month = currentMonth;
+//        day = currentDay;
+//    }
 
 }

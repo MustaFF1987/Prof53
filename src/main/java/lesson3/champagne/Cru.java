@@ -6,6 +6,7 @@ public enum Cru {
     private int quality;
 
     Cru(int quality) {
+
         this.quality = quality;
     }
 

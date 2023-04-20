@@ -10,7 +10,7 @@ public class Dealer {
         return new Card(
                 Rank.values()[rank],
                 Suite.values()[suite]
-                //dsdasd
+
         );
     }
 }

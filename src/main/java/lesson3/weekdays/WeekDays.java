@@ -15,4 +15,19 @@ public enum WeekDays {
 
 }
 
+// альтернативный способ написания кода:
+
+//    public boolean isWorkDay()
+//    {
+//        // возвращать true если день с понедельника по пятницу включительно
+//        return !isWeekEnd();
+//    }
+//
+//    public boolean isWeekEnd()
+//    {
+//        // возвращать true если день суббота или воскресенье
+//        return ordinal() == 5 || ordinal() == 6;
+//    }
+
+
 
