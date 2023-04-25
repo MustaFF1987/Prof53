@@ -42,8 +42,6 @@ public class Array3_UniqueNumbers {
         for(int i = 0; i < result; i++){
             finalArray[i] = resultArray[i];
         }
-
         System.out.println(Arrays.toString(finalArray));
-
     }
 }
