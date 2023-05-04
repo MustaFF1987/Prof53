@@ -39,9 +39,9 @@ public class Lesson6HomeWork {
         // с помощью цикла for идем до середины списка
          for (int i = 0; i < arraySize / 2 ; i++) {
              {
-                 // с помощью names.get(i) получаем элемент из списка и записываем его в переменную типа String temp
+                 // с помощью names.get(i) получаем элемент из списка и записываем его в переменную temp типа String
                  String temp = names.get(i);
-                 // с помощью names.set(i, "String") задём ИТОМУ элементу значение
+                 // с помощью names.set(i, "String") задаём ИТОМУ элементу значение
                  names.set(i, names.get(arraySize - i - 1));
                  names.set(arraySize - i - 1, temp);
                  // На каждой итерации цикла, метод меняет местами элементы с начала и конца списка
