@@ -8,7 +8,7 @@ public class JavaPractice {
 
         System.out.println(countWords(sentence));
 
-        concordance("два раза это два раза");
+        concordance(sentence);
 
     }
 
@@ -78,7 +78,7 @@ public class JavaPractice {
         Set<String> uw = new HashSet<>(Arrays.asList(words));
         for (String word : uw) {
             List<Integer> positions = new ArrayList<>();
-            /* Для каждого уникального слова мы проходим по всей фразе
+            /* Для каждого уникального слова мы проходим по всей фразе c помощью цикла foreach
             и добавляем в список positions все позиции,
             на которых данное слово встречается фразе */
             for (int i = 0; i < words.length; i++) {
@@ -90,3 +90,5 @@ public class JavaPractice {
         }
     }
 }
+
+
