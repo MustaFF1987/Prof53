@@ -11,6 +11,9 @@ public class PlayerTester {
         players.add(new Player(11,"Mike"));
         players.add(new Player(12,"Misha"));
         players.add(new Player(11,"Galina"));
+        players.add(new Player(15,"Alexander"));
+        players.add(new Player(1,"Natasha"));
+        players.add(new Player(25,"Alexander"));
 
     // System.out.println(players.size());
     // System.out.println(players);
@@ -25,5 +28,21 @@ public class PlayerTester {
         for (Player p: players) {
             System.out.println("ForEach "+ p);
         }
+// неправильный подход
+//        for (Player p: players)
+//        {
+//            if(p.getName().equals("Alexander"))
+//                players.remove(p);
+//        }
+        // Remove "Alexander"
+        Iterator<Player> toRemove = players.iterator();
+        while (toRemove.hasNext())
+        {
+            Player p = toRemove.next();
+            if(p.getName().equals("Alexander"))
+                toRemove.remove();
+        }
+        System.out.println(players);
+
     }
 }
