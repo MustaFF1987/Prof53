@@ -4,6 +4,7 @@ import java.util.*;
 
 public class JavaPractice {
     public static void main(String[] args) {
+
         String sentence = "два раза это два раза";
 
         System.out.println(countWords(sentence));
@@ -71,24 +72,23 @@ public class JavaPractice {
         /*  В функцию, которая создает по фразе concordance - в каком порядке и на каких позициях слова присутствуют во фразе
             "один раз это один раз" -> "один":[0,3], "раз":[1,4], "это":[2]  */
 
-    public static void concordance(String phrase) {
+
+       public static void concordance(String phrase) {
         // разбиваем заданную фразу на слова с помощью метода split()
         String[] words = phrase.split(" ");
         // Создаём Set StringOv
         Set<String> uw = new HashSet<>(Arrays.asList(words));
         for (String word : uw) {
-            List<Integer> positions = new ArrayList<>();
+            List<Integer> position = new ArrayList<>();
             /* Для каждого уникального слова мы проходим по всей фразе c помощью цикла foreach
-            и добавляем в список positions все позиции,
-            на которых данное слово встречается фразе */
+            и добавляем в список positions все позиции, на которых данное слово встречается фразе */
             for (int i = 0; i < words.length; i++) {
                 if (words[i].equals(word)) {
-                    positions.add(i);
+                    position.add(i);
                 }
             }
-            System.out.print(" " + word + ": " + positions);
+            System.out.print(word + ": " + position);
         }
     }
 }
-
 

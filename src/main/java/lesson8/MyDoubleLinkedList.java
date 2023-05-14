@@ -94,6 +94,36 @@ public class MyDoubleLinkedList implements MyList {
         return head;
     }
 
+    // Решение от Марата:
+    /*  public int getFirst() {
+        return get(0);
+    }
+
+    public int getLast() {
+        return get(size()-1);
+    }
+public int removeFirst() {
+        int temp = get(0);
+        remove(0);
+        return temp;
+    }
+
+    public int removeLast() {
+        int temp = get(size() - 1);
+        remove(size() - 1);
+        return temp;
+    }
+
+    public void addFirst(int value) {
+        add(0, value);
+    }
+
+    public void addLast(int value) {
+        add(value);
+    }
+
+*/
+
     /* То же самое делаем с конца */
     public Node removeLastElement() {
         if(tail == null) {
