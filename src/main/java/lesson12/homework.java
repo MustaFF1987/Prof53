@@ -25,7 +25,7 @@ public class homework {
 
             }
         }
-        System.out.println("Элементы, которые встречаются нечетное кол-во раз " + set);
+        System.out.println("Числа, встречающиеся нечетное кол-во раз " + set);
 
         // Удаляем из списка все элементы, которые содержатся в set.
 
@@ -45,7 +45,7 @@ public class homework {
                 list.remove(i);
             }
         }
-        System.out.println("Числа, встречающиеся нечетное количество раз " + list);
+        System.out.println("Числа, встречающиеся четное количество раз " + list);
         }
     }
 
