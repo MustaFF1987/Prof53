@@ -27,13 +27,24 @@ public class homework {
         }
         System.out.println("Элементы, которые встречаются нечетное кол-во раз " + set);
 
-        // в цикле for удаляем из списка все элементы, которые содержатся в set.
-        for (int i = 0; i < list.size(); i++) {
-            if (set.contains(list.get(i))) {
+        // Удаляем из списка все элементы, которые содержатся в set.
+
+//        обычный цикл:
+
+//        for (int i = 0; i < list.size(); i++) {
+//            if (set.contains(list.get(i))) {
+//                list.remove(i);
+//                i--;
+//            }
+//        }
+
+//        в цикле foreach:
+
+        for (Integer i : new ArrayList<>(list)) {
+            if (set.contains(i)) {
                 list.remove(i);
-                i--;
-                }
             }
+        }
         System.out.println("Числа, встречающиеся нечетное количество раз " + list);
         }
     }
