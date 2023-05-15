@@ -81,14 +81,22 @@ public class CustomArrayDeque implements CustomDeque {
     // добавить элемент в конец очереди
     @Override
     public int addLast(int value) {
-        if (size == source.length) {
-            throw new IndexOutOfBoundsException();
+        if (size() == source.length) {
+            increaseCapacity();
         }
-        source[last] = value;
-        last = (last + 1) % source.length;
+        /* проверяем, нужно ли увеличить размер массива,
+        и вычисляем индекс последнего элемента */
+
+        last = (firstElementIndex + size - 1) % source.length;
+
+        /* Затем мы добавляем новый элемент в следующую позицию после последнего
+        элемента*/
+
+        source[(last + 1) % source.length] = value;
+        /* увеличиваем размер контейнера */
         size++;
         return value;
-            }
+        }
 
     // получение последнего элемента из списка и вывода ега на экран
     @Override

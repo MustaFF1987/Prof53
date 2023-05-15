@@ -80,7 +80,7 @@ import java.util.*;
             partiallyReverseQueue(q, 5);
             System.out.println("queue after: " + q);
 
-            // напишите функцию которая ищет в списке самую длинную последовательность четных чисел
+            // напишите функцию, которая ищет в списке самую длинную последовательность четных чисел
             // [1,2,5,6,8,7,4] -> [6,8]
             System.out.println(longestEvenSequence(Arrays.asList(1,2,5,6,8,7,4))); // 6 8
 
@@ -156,7 +156,6 @@ import java.util.*;
         }
 
 
-        // перерыв до 20:40
         public static boolean checkProduct(List<Integer> ints, int value)
         {
             Collections.sort(ints);
@@ -217,7 +216,7 @@ import java.util.*;
                 return false;
             if(s1.size() != s2.size())
                 return false;
-            // 1. перебор элементов из одного и проверка что этот элемент присутствует во втором
+//        1. перебор элементов из одного и проверка что этот элемент присутствует во втором
 //        for(String s: s1)
 //            if(!s2.contains(s))
 //                return false;
