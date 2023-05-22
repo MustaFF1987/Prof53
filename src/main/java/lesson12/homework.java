@@ -12,7 +12,6 @@ public class homework {
         removeOddNumbers(list);
     }
 
-
     public static void removeOddNumbers(List<Integer> list) {
         /* Идём в цикле foreach и добавляем в set числа которые, встречаются
         впервые или удаляем, если встречаются повторно */

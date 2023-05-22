@@ -18,6 +18,8 @@ public class ArrayDequeTester {
         deque.addLast(92);
         System.out.println(deque);
 
+        System.out.println(deque.getLast());
+
 
 
 

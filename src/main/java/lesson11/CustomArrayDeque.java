@@ -98,6 +98,18 @@ public class CustomArrayDeque implements CustomDeque {
         return value;
         }
 
+        /*Пример Марата
+        @Override
+    public void addLast(int value) {
+        if(size() == source.length)
+            increaseCapacity();
+        int lastElementIndex = (firstElementIndex + size()) % source.length;
+        source[lastElementIndex] = value;
+        size++;
+    }
+
+        * */
+
     // получение последнего элемента из списка и вывода ега на экран
     @Override
     public int getLast() {
@@ -106,6 +118,16 @@ public class CustomArrayDeque implements CustomDeque {
         }
         return source[(last + source.length - 1) % source.length];
     }
+
+    /* Пример Марата:
+    @Override
+    public int getLast() {
+        if(size() == 0)
+            throw new IndexOutOfBoundsException();
+        int lastElementIndex = (firstElementIndex + size() - 1) % source.length;
+        return source[lastElementIndex];
+    }
+*/
 
     // удалить последний элемент из очереди
     @Override
@@ -117,4 +139,16 @@ public class CustomArrayDeque implements CustomDeque {
         // вернуть сохраненное значение
         return value;
     }
+
+    /*Пример Марата:
+    @Override
+    public int removeLast() {
+        if(size() == 0)
+            throw new IndexOutOfBoundsException();
+        int lastElementIndex = (firstElementIndex + size() - 1) % source.length;
+        int result = source[lastElementIndex];
+        size--;
+        return result;
+    }
+*/
 }
