@@ -13,6 +13,13 @@ public class MyHashMapTester {
         map.put("Belgium", "Brussels");
         System.out.println(map);
         System.out.println(map.size());
+        map.remove("Poland");
+        System.out.println(map);
+        System.out.println(map.size());
+        map.remove("England");
+        System.out.println(map);
+        System.out.println(map.size());
+
 
 
 

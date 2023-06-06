@@ -136,12 +136,26 @@ public class MyHashMap implements MyMap{
 
     @Override
     public String remove(String key) {
-//        Pair pair = findPair(key);
-//        if (findPair(key) != null) {
-//            pair.value = null;
-//
-//        }
-        return null;
+        int bucket = findBucket(key);
+        Pair current = source[bucket];
+        if (current == null) // случай если нет элемента в бакете
+            return null;
+        if (current.key.equals(key)) {  // случай если нужный элемент находиться в бакете
+            source[bucket] = current.next;
+            size--;
+            return current.value;
+    }
+        while(current.next != null) // 3ий случай
+        {
+            if(current.next.key.equals(key))
+            {
+                Pair toDelete = current.next;
+                current.next = toDelete.next;
+                size--;
+                return toDelete.value;
+            }
+        }
+        return null; // если элемент с таким ключом отсутствует
     }
 
 
