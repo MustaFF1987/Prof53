@@ -8,9 +8,19 @@ import java.util.stream.Collectors;
 
 public class homework3 {
     public static void main(String[] args) {
-        List<String> names = new ArrayList<>(Arrays.asList(
-                "Dima", "Max", "Anna"));
-        names.stream().map(String::toUpperCase).toList().forEach(System.out::println);
+        // Элементы списка строк преобразуйте в верхний регистр и добавьте к длину;
+        // потом вызовите функцию которая преобразует строки в обратный порядок
+        // Пример: ["Dima", "Max"] -> ["4-AMID", "3-XAM"]
+        List<String> names = Arrays.asList("Dima", "Max");
+        System.out.println(
+                names.stream()
+                        .map(String::toUpperCase)
+                        .map(s -> s + "-" + s.length())
+                        .map(s -> new StringBuilder(s))
+                        .map(b -> b.reverse())
+                        .map(b -> b.toString())
+                        .collect(Collectors.toList())
+        );
 
 
 
