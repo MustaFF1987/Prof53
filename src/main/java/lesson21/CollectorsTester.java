@@ -7,6 +7,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CollectorsTester {
     public static void main(String[] args) {
@@ -291,6 +292,15 @@ public class CollectorsTester {
         System.out.println(
                 Set.of("abc", "def", "1").stream()
                         .collect(stringLengthSummator) // 7
+        );
+
+        System.out.println(
+                Stream.of("one", "two", "three", "eleven")
+                        .collect(
+                                Collectors.joining(
+                                        ", ", "{", "}"
+                                )
+                        )
         );
 
 

@@ -26,8 +26,6 @@ public class homework1 {
 
         Map<String, Integer> map = Arrays.stream(lines)
                 .collect(Collectors.toMap(l -> l, String::length));
-
-
             System.out.println(map);
         }
     }
