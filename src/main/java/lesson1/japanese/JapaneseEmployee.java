@@ -28,11 +28,15 @@ public class JapaneseEmployee {
     // если меньше то
     // Привет имя
 
-    public void hello() {
-        if (years >= 10)
-            System.out.println("Hello Mrs " + firstName);
+    public String hello()
+    {
+        String s = "";
+        if(years >= 10)
+            s = "Добрый день " + firstName + " " + lastName;
         else
-            System.out.println("Hello " + firstName);
+            s = "Привет " + firstName;
+        System.out.println(s);
+        return s;
     }
 
 

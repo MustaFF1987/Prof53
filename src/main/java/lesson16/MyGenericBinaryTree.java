@@ -1,22 +1,20 @@
 package lesson16;
 
-public class MyBinaryTree {
-    public static class Vortex {
+public class  MyGenericBinaryTree <T extends Comparable<T>> {
 
-        public int value; // значение вершины
-        public Vortex left; // левая дочерняя вершина
-        public Vortex right; // правая дочерняя вершина
+    public static class Vortex <T> {
+        T value; // значение вершины
+        Vortex<T> left; // левая дочерняя
+        Vortex<T> right; // правая дочерняя
 
-
-        public Vortex(int value) {
+        public Vortex(T value) {
             this.value = value;
         }
 
-        public Vortex(int value, Vortex left, Vortex right) {
+        public Vortex(T value, Vortex<T> left, Vortex<T> right) {
             this.value = value;
             this.left = left;
             this.right = right;
-
         }
 
         public int depth() {
@@ -34,15 +32,15 @@ public class MyBinaryTree {
                     (right == null ? 0 : right.depth()
                     )
             );
+        }
 
-            }
         @Override
         public String toString() {
             StringBuilder b = new StringBuilder("{");
             b.append("\"left\":");
             b.append(left == null ? "{}" : left.toString());
             b.append(", \"value\":");
-            b.append(value);
+            b.append("\"" + value + "\"");
             b.append(", ");
             b.append("\"right\":");
             b.append(right == null ? "{}" : right.toString());
@@ -50,19 +48,19 @@ public class MyBinaryTree {
             return b.toString();
         }
 
+        // до 21:40
         public int countVortexes() {
             return 1 +
                     (left == null ? 0 : left.countVortexes()) +
                     (right == null ? 0 : right.countVortexes())
                     ;
         }
-
-
     }
 
-    private Vortex root; // корень дерева
 
-    public MyBinaryTree(Vortex root) {
+    private Vortex <T> root; // корень дерева
+
+    public MyGenericBinaryTree(Vortex <T> root) {
         this.root = root;
     }
 
@@ -71,68 +69,58 @@ public class MyBinaryTree {
         return root.depth();
     }
 
-    public void add(int value)
-    {
+
+    public void add(T value) {
         root = addRecursive(root, value);
     }
 
-    private Vortex addRecursive(Vortex current, int value)
-    {
-        if(current == null)
-            return new Vortex(value);
-
-        if(value < current.value)
+    private Vortex<T> addRecursive(Vortex<T> current, T value) {
+        if (current == null)
+            return new Vortex<T>(value);
+        if (value.compareTo(current.value) < 0)
             current.left = addRecursive(current.left, value);
-
-        if(value > current.value)
+        else if (value.compareTo(current.value) > 0)
             current.right = addRecursive(current.right, value);
-
         return current;
     }
 
-    public boolean contains(int value)
-    {
-
+    public boolean contains(T value) {
         return containsRecursive(root, value);
     }
 
-    private boolean containsRecursive(Vortex current, int value) {
+    // до 20:52
+    private boolean containsRecursive(Vortex<T> current, T value) {
         if (current == null)
             return false;
-
-        if (value == current.value)
+        if (value.compareTo(current.value) == 0)
             return true;
-
-        else if (value < current.value)
-        {
-        return containsRecursive(current.left, value);
+        else if (value.compareTo(current.value) < 0) {
+            return containsRecursive(current.left, value);
         }
         return containsRecursive(current.right, value);
-        }
+    }
 
     @Override
     public String toString() {
         return root.toString();
     }
 
-
-    public void delete(int value)
-    {
-       root =  deleteRecursive(root, value);
+    public void delete(T value) {
+        root = deleteRecursive(root, value);
     }
 
-
-    public Vortex deleteRecursive(Vortex current, int value) {
+    public Vortex<T> deleteRecursive(Vortex<T> current, T value) {
         if (current == null)
             return null;
 
-        if (value < current.value) {
+        if (value.compareTo(current.value) < 0) {
             current.left = deleteRecursive(current.left, value);
             return current;
-        } else if (value > current.value) {
+        } else if (value.compareTo(current.value) > 0) {
             current.right = deleteRecursive(current.right, value);
             return current;
         }
+        // current.value == value - нужно удалить текущий элемент
         if (current.left == null && current.right == null)
             return null;
         else if (current.left == null) {
@@ -141,15 +129,13 @@ public class MyBinaryTree {
             return current.left;
         }
 
-        int smallestValue = findSmallestValue(current.right);
+        T smallestValue = findSmallestValue(current.right);
         current.value = smallestValue;
         current.right = deleteRecursive(current.right, smallestValue);
         return current;
     }
 
-
-
-    private int findSmallestValue(Vortex current) {
+    private T findSmallestValue(Vortex<T> current) {
         return current.left == null ?
                 current.value :
                 findSmallestValue(current.left);
@@ -160,5 +146,5 @@ public class MyBinaryTree {
         return root.countVortexes();
     }
 
-
 }
+
